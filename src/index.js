@@ -5,23 +5,27 @@ const Header = ({ text }) => (<h1>{text}</h1>)
 
 const Button = ({ text, handleClick }) => (<button onClick={handleClick}>{text}</button>)
 
+const Statistic = ({ text, value }) => <div>{text} {value}</div>
+
 const Statistics = ({ good, neutral, bad }) => {
   const totalVotes = good + neutral + bad
 
+  // conditional rendering
   if (totalVotes === 0) {
     return (<div>No feedback given</div>)
   }
+
   const totalPoints = good - bad
   const average = totalPoints / totalVotes
-  const positive = good / totalVotes * 100
+  const positive = (good / totalVotes * 100) + '%'
 
   return (<div>
-    <div>good {good}</div>
-    <div>neutral {neutral}</div>
-    <div>bad {bad}</div>
-    <div>all {totalVotes}</div>
-    <div>average {average || 0}</div>
-    <div>positive {positive || 0} %</div>
+    <Statistic text='good' value={good} />
+    <Statistic text='neutral' value={neutral} />
+    <Statistic text='bad' value={bad} />
+    <Statistic text='all' value={totalVotes} />
+    <Statistic text='average' value={average} />
+    <Statistic text='positive' value={positive} />
   </div>)
 }
 
