@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Live demo at [unicafe](https://suspicious-kepler-59ff8b.netlify.app/)
+Live demo at [unicafe](https://suspicious-kepler-59ff8b.netlify.app/).
 
 ## 1.6
 
